@@ -1,0 +1,73 @@
+How are our requests are handled?
+    - This is because of the Dispatcher Servlet it follows front controller pattern.
+    - It will automatically map the servlets ('/')
+    - DispatcherServletAutoConfiguration
+
+How is error pages handled?
+    - when we mismatch the urls in the browser an whitelabel error page is shown
+    - ErrorMvcAutoConfiguration
+
+How are all jars available (spring,spring mvc,tomcat,jackson)?
+    - SpringBoot Starter web
+
+@GetMapping -  is specifically for HTTP GET requests
+@RequestMapping - handles any HTTP method
+@PostMapping - is used to handle HTTP POST requests
+@RequestParam - Extracts data from query parameters in the request URL
+@PathVariable - Extracts data from URI templates in the URL path (to retrieve data from the URL path)
+@ResponseBody - is used to convert Java objects into JSON responses
+
+Request Methods for rest api
+1. GET  - retrieve details of resource
+2. POST - create a new resource
+3. PUT  - update an existing resource
+4. PATCH    - update part of an resource
+5. DELETE   - delete a resource
+
+SOCIAL MEDIA REST API
+1. User
+    GET - retrieve all users (GET/users)
+        - retrieve one user (GET/users/{id})
+    POST - create a user (POST/users)
+          - Used talend Api tester (google chrome extension) to send post requests
+    DELETE - delete user resource (DELETE/user)
+
+ResponseEntity - It is the class in the Spring Framework that represents the entire
+                HTTP response, including the status code, headers, and body. It is a part of the
+                org. springframework. http package and is a powerful tool for controlling the
+                output of the RESTful services.
+
+2. Posts
+    GET
+    POST
+    DELETE
+
+
+Exception Handling in SpringBoot
+
+some key approaches to exception handling in Spring Boot:
+
+1. Default exception handling by Spring Boot
+    Spring Boot provides a systematic error response to the user with information such
+    as timestamp, HTTP status code, error, message, and the path.
+
+2. Using @ExceptionHandler annotation
+    - @ExceptionHandler annotation provided by Spring Boot can be used to handle
+        exceptions in particular Handler classes or Handler methods.
+    - Any method annotated with this is automatically recognized by Spring Configuration
+        as an Exception Handler Method.
+    - An Exception Handler method handles all exceptions and their subclasses passed
+        in the argument.
+    - It can also be configured to return a specific error response to the user.
+
+3. Using @ControllerAdvice for global exception handling
+     If we want to handle any exception thrown throughout the application, we can define
+     a global exception handler class and annotate it with @ControllerAdvice. This
+     annotation helps to integrate multiple exception handlers into a single global unit.
+
+
+
+
+
+
+
