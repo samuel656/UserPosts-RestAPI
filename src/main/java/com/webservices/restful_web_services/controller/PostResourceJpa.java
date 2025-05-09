@@ -53,6 +53,16 @@ public class PostResourceJpa {
        return user.getPosts();
     }
 
+    @PatchMapping("/users-jpa/{id}/posts/{pid}")
+    public void updatePostById(@RequestBody Post post,@PathVariable int pid,
+        @PathVariable int id)
+    {
+        Post post1=postRepository.findById(pid).get();
+        post1.setDescription(post.getDescription());
+        postRepository.save (post1);
+
+    }
+
     @DeleteMapping("users-jpa/{id}/delete-post")
     public void DeletePostById(@PathVariable int id)
     {
